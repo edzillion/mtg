@@ -1,14 +1,18 @@
 import {App, Platform} from 'ionic/ionic';
 import {TabsPage} from './pages/tabs/tabs';
+import {MyData} from './providers/my-data/my-data'
 
+deb = 'test';
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
+  providers: [MyData],
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  constructor(platform: Platform) {
+  constructor(platform: Platform, myData: MyData) {
     this.rootPage = TabsPage;
+    deb = myData;
 
     platform.ready().then(() => {
       // The platform is now ready. Note: if this callback fails to fire, follow

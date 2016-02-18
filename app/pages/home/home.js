@@ -7,7 +7,7 @@ import {Page, NavController} from 'ionic/ionic';
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/home/home.html',
+  templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
   constructor(nav: NavController) {
