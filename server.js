@@ -25,5 +25,5 @@ app.delete('/agents/favorites/:id', agents.unfavorite);
 //app.get('/brokers/:id', brokers.findById);
 
 app.listen(app.get('port'), function () {
-    console.log('Realty server listening on port ' + app.get('port'));
+    console.log('Agent server listening on port ' + app.get('port'));
 });

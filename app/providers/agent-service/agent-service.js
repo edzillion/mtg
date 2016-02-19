@@ -1,8 +1,8 @@
 import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/share';
-import {Todo} from 'app/interfaces';
+import 'rxjs/Rx';
+import {Agent} from 'interfaces/interfaces';
 
 /*
   Generated class for the AgentService provider.
@@ -20,6 +20,7 @@ export class AgentService {
 
   constructor(http: Http) {
 
+    this._http = http;
     // Create Observable Stream to output our data
     this.agents$ = new Observable(observer =>
       this._agentsObserver = observer).share();
@@ -28,6 +29,7 @@ export class AgentService {
   }
 
   loadAgents() {
+
       this._http.get('localhost:5000/agents').map(response => response.json()).subscribe(data => {
           // Update data store
           this._dataStore.agents = data;
