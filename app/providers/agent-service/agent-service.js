@@ -19,7 +19,6 @@ export class AgentService {
   };
 
   constructor(http: Http) {
-
     this._http = http;
     // Create Observable Stream to output our data
     this.agents$ = new Observable(observer =>
@@ -29,8 +28,7 @@ export class AgentService {
   }
 
   loadAgents() {
-
-      this._http.get('localhost:5000/agents').map(response => response.json()).subscribe(data => {
+      this._http.get('http://localhost:5000/agents').map(response => response.json()).subscribe(data => {
           // Update data store
           this._dataStore.agents = data;
 
@@ -39,15 +37,15 @@ export class AgentService {
       }, error => console.log('Could not load agents.'));
   }
 
-  getAgents() {
-    this.http.get('localhost:5000/agents')
-      .map(res => res.text())
-      .subscribe(
-        data => this.randomQuote = data,
-        err => this.logError(err),
-        () => console.log('Random Quote Complete')
-      );
-  }
+  // getAgents() {
+  //   this.http.get('localhost:5000/agents')
+  //     .map(res => res.text())
+  //     .subscribe(
+  //       data => this.randomQuote = data,
+  //       err => this.logError(err),
+  //       () => console.log('Random Quote Complete')
+  //     );
+  // }
 
   load() {
     if (this.data) {

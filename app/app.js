@@ -10,10 +10,8 @@ deb = 'test';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  constructor(platform: Platform, agentService: AgentService) {
+  constructor(platform: Platform) {
     this.rootPage = TabsPage;
-    deb = agentService;
-
 
     platform.ready().then(() => {
       // The platform is now ready. Note: if this callback fails to fire, follow

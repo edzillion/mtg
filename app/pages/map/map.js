@@ -1,4 +1,5 @@
 import {Page, NavController} from 'ionic/ionic';
+//import {AgentService} from './providers/agent-service/agent-service';
 
 /*
   Generated class for the MapPage page.
@@ -7,10 +8,11 @@ import {Page, NavController} from 'ionic/ionic';
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/map/map.html',
+  templateUrl: 'build/pages/map/map.html'
 })
 export class MapPage {
-  constructor(nav: NavController) {
+  constructor(nav: NavController) {//, agentService: AgentService) {
     this.nav = nav;
+    //this.agents = agentService._dataStore.agents;
   }
 }
