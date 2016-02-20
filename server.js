@@ -3,7 +3,7 @@ var express = require('express'),
     compression = require('compression'),
     cors = require('cors'),
     agents = require('./server/travelagent-service'),
-    //brokers = require('./server/broker-service'),
+    locations = require('./server/location-service'),
     app = express();
 
 app.set('port', process.env.PORT || 5000);
@@ -15,6 +15,7 @@ app.use(compression());
 app.use('/', express.static(__dirname + '/www'));
 
 app.get('/agents', agents.findAll);
+app.get('/locations', locations.findAll);
 app.get('/agents/favorites', agents.getFavorites);
 app.get('/agents/:id', agents.findById);
 app.post('/agents/likes', agents.like);

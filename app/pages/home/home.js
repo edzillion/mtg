@@ -1,4 +1,5 @@
 import {Page, NavController} from 'ionic/ionic';
+import {SearchForm} from '../../components/search-form/search-form'
 
 /*
   Generated class for the HomePage page.
@@ -7,7 +8,8 @@ import {Page, NavController} from 'ionic/ionic';
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/home/home.html',
+  directives: [SearchForm]
 })
 export class HomePage {
   constructor(nav: NavController) {

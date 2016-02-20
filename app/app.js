@@ -1,8 +1,8 @@
 import {App, Platform} from 'ionic/ionic';
 import {TabsPage} from './pages/tabs/tabs';
 import {AgentService} from './providers/agent-service/agent-service'
+import {bootstrap} from 'angular2/platform/browser';
 
-deb = 'test';
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
@@ -10,8 +10,9 @@ deb = 'test';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  constructor(platform: Platform) {
+  constructor(platform: Platform, agentService: AgentService) {
     this.rootPage = TabsPage;
+    agentService.loadAgents();
 
     platform.ready().then(() => {
       // The platform is now ready. Note: if this callback fails to fire, follow
@@ -31,3 +32,5 @@ export class MyApp {
     });
   }
 }
+
+//bootstrap(MyApp,[settingsService]);

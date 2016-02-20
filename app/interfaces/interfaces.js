@@ -17,5 +17,19 @@ export interface Agent {
   broker: Broker,
   pic: string,
   thumb: string,
-  description: string,
+  description: string
+};
+
+export interface Services: {
+  [index: number]: string
+};
+
+export interface Location {
+  id: number,
+  lat: number,
+  lng: number,
+  title: string,
+  address: string,
+  services: Services,  
+  focus: boolean
 };

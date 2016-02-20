@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "angular-leaflet-directive": "^0.10.0",
     "angular2": "2.0.0-beta.2",
     "body-parser": "^1.14.2",
     "compression": "^1.6.1",
